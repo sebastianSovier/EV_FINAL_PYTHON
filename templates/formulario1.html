@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Notas</title>
+     <link rel="stylesheet"  href="/static/css/styles.css">
+</head>
+<body class="body">
+<div class="container f">
+    <h1>Calculo de compras</h1>
+    <form method="post">
+    <div class="form-group"  >
+        <label for="nombre">Ingresa tu nombre:</label>
+        <input type="text" name="nombre" value="{{compras.nombre}}" />
+    </div>
+    <div class="form-group">
+         <label for="edad">Ingresa tu edad:</label>
+        <input type="number" name="edad" value="{{compras.edad}}" m/>
+    </div>
+    <div class="form-group">
+         <label for="cantTarros">Ingresa la cantidad de tarros de pintura a comprar:</label>
+        <input type="number" name="cantTarros" value="{{compras.cantTarros}}"  />
+    </div >
+    <div class="form-group"><input type="submit" value="Calcular"></div>
+        </form>
+    {% if totalSinDesc > 0 %}
+    <label class="label">Nombre del cliente: {{ nombre }}</label>
+    <label class="label">Total sin descuento : ${{totalSinDesc}}</label>
+    {% if totalConDesc > 0 %}
+    <label class="label" >El descuento es: $ {{ descuento }}</label>
+{% endif %}
+    <label class="label" >El total a pagar es de : $ {{ totalConDesc }}</label>
+{% endif %}
+
+</div>
+
+
+
+
+
+</body>
+</html>
